@@ -24,7 +24,6 @@ jobs:
                 echo "${{ env.image }}"
 
       - name: Envío evento
-      - name: "Dispatch a deploy-test event"
         run: |
           curl -H "Accept: application/vnd.github.everest-preview+json" \
             -H "Authorization: token ${{ secrets.ACCESS_TOKEN }}" \
