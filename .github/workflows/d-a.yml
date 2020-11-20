@@ -28,7 +28,6 @@ jobs:
                 echo "::set-output name=image_name::$IMAGE"
 
       - name: Envío evento
-      - name: Envío evento
         run: |
           curl -H "Accept: application/vnd.github.everest-preview+json" \
             -H "Authorization: token ${{ secrets.ACCESS_TOKEN }}" \
