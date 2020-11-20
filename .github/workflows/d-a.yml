@@ -1,0 +1,36 @@
+name: Publish Docker image
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    env:
+      uno: 'soyUNO'
+      dos: 'soyDOS'
+      tres: 'soyTRES'
+      state_repo: 'gustavoborragan/repo_b'
+
+      state_repo_git_user: 'github-actions'
+      state_repo_git_mail: 'github-actions@github.com'
+
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - name: "Dispatch a deploy-test event"
+        run: |
+          curl -H "Accept: application/vnd.github.everest-preview+json" \
+            -H "Authorization: token ${{ secrets.ACCESS_TOKEN }}" \
+            --request POST \
+            --data '{
+              "event_type": "proba", 
+              "client_payload": {
+                "uno": "${{ env.uno }}",
+                "dos": "${{ env.dos }}",
+                "tres": "${{ env.tres }}" }}'\
+            https://api.github.com/repos/${{ env.state_repo }}/dispatches
+
