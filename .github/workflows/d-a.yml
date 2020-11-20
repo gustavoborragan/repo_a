@@ -21,7 +21,7 @@ jobs:
       - name: contrucción imagen
         id: image
         run: |
-                run: echo "::set-output name=image_name:::pericoDeLosPalotes"
+                echo "::set-output name=image_name:::pericoDeLosPalotes"
         
       - name: Envío evento
         run: |
