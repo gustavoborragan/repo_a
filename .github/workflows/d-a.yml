@@ -20,7 +20,7 @@ jobs:
 
       - name: imagen
         run: |
-                echo "::set-output name=IMAGE::357759105005.dkr.ecr.eu-west-1.amazonaws.com/servicios/mailer:${GITHUB_SHA::8}"
+                echo "::set-output name=image::357759105005.dkr.ecr.eu-west-1.amazonaws.com/servicios/mailer:${GITHUB_SHA::8}"
                 echo "${{ env.image }}"
                 echo $IMAGE
 
