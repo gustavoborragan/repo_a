@@ -3,6 +3,8 @@ name: Publish Docker image
 on: push
 
 jobs:
+  env:
+    nombre_cluster: k8s
   build:
     runs-on: ubuntu-latest
     steps:
@@ -21,6 +23,6 @@ jobs:
       - name: Get pods
         run: |
                 mkdir -p ~/.kube
-                aws eks update-kubeconfig
+                aws eks update-kubeconfig --name ${{ env.nombre_cluster }}
                 cat ~/.kube/config
 
