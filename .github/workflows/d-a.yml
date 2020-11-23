@@ -30,6 +30,6 @@ jobs:
       - name: Get pods
         run: |
                 mkdir -p ~/.kube
-                update-kubeconfig
+                aws eks update-kubeconfig --name k8s
                 cat ~/.kube/config
 
