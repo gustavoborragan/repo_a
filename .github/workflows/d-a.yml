@@ -29,5 +29,5 @@ jobs:
 
       - name: Get pods
         run: |
-                kubectl get pods
+                aws --version
 
