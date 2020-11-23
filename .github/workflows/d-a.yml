@@ -2,9 +2,10 @@ name: Publish Docker image
 
 on: push
 
+env:
+  nombre_cluster: k8s
+
 jobs:
-  env:
-    nombre_cluster: k8s
   build:
     runs-on: ubuntu-latest
     steps:
