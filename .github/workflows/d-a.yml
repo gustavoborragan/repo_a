@@ -4,15 +4,6 @@ on: push
 
 jobs:
   build:
-    env:
-      uno: 'soyUNO'
-      dos: 'soyDOS'
-      tres: 'soyTRES'
-      state_repo: 'gustavoborragan/repo_b'
-
-      state_repo_git_user: 'github-actions'
-      state_repo_git_mail: 'github-actions@github.com'
-
     runs-on: ubuntu-latest
     steps:
 
@@ -30,6 +21,6 @@ jobs:
       - name: Get pods
         run: |
                 mkdir -p ~/.kube
-                aws eks update-kubeconfig --name k8s
+                aws eks update-kubeconfig
                 cat ~/.kube/config
 
