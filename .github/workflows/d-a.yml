@@ -4,7 +4,7 @@ on: push
 
 env:
   nombre_cluster: 'k8s'
-  region: 'us-east-1'
+  region: 'eu-west-1'
 
 jobs:
   build:
