@@ -3,8 +3,8 @@ name: Publish Docker image
 on: push
 
 env:
-  nombre_cluster: k8s
-  region: us-east-1
+  nombre_cluster: 'k8s'
+  region: 'us-east-1'
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.region }} us-east-1
+          aws-region: ${{ env.region }}
 
       - name: Login to Amazon ECR
         id: login-ecr
