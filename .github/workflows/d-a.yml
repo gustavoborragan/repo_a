@@ -22,9 +22,12 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Get pods
+      - name: Set kubeconfig
         run: |
                 mkdir -p ~/.kube
                 aws eks update-kubeconfig --name ${{ env.nombre_cluster }}
-                cat ~/.kube/config
+                #cat ~/.kube/config
 
+      - name: Get pods
+        run: |
+                kubectl gest pods
