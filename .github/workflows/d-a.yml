@@ -28,7 +28,8 @@ jobs:
                 aws eks update-kubeconfig --name ${{ env.nombre_cluster }}
                 #cat ~/.kube/config
 
+      - uses: actions/checkout@v2
+
       - name: Get pods
-        uses: actions/checkout@v2
         run: |
                 kubectl gest pods
